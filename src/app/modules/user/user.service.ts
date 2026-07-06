@@ -4,11 +4,11 @@ import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
 import { envVars } from "../../config/env";
 import AppError from "../../errorHelpers/appError";
-import { manageUser } from "../../helper/manageUser";
 import { QueryBuilder } from "../../utils/queryBuilder";
 import { userSearchableFields } from "./user.constants";
 import { IAuthProvider, IUser, Role } from "./user.interface";
 import { User } from "./user.model";
+import { manageUser } from "../../helper/manageUser";
 
 const createUserService = async (payload: Partial<IUser>) => {
   const { email, password, ...rest } = payload;
